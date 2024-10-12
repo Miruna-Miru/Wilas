@@ -108,6 +108,56 @@
     }
   }
   
+  /* Create Blog Section */
+.create-blog-section {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .create-blog-section h2 {
+    font-size: 32px;
+    color: #474bca;
+    margin-bottom: 20px;
+  }
+  
+  .create-blog-section p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .create-blog-btn {
+    background-color: #474bca;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .create-blog-btn:hover {
+    background-color: #3b40a1;
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design for Create Blog Section */
+  @media (max-width: 768px) {
+    .create-blog-section h2 {
+      font-size: 28px;
+    }
+  
+    .create-blog-section p {
+      font-size: 16px;
+    }
+  
+    .create-blog-btn {
+      font-size: 16px;
+      padding: 12px 25px;
+    }
+  }
   
 
   .explore {
