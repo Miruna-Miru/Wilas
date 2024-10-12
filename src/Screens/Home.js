@@ -3,7 +3,7 @@ import Header from '../components/Header'; // Import Header component
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from '../components/Footer';
 
-const Home = () => {
+const Home = ({ toggleProfile }) => {
   const [faqs, setFaqs] = useState([
     { question: 'What is a blog?', answer: 'A blog is a regularly updated website or web page, typically run by an individual or small group, written in an informal or conversational style.', open: false },
     { question: 'How do I start a blog?', answer: 'To start a blog, choose a blogging platform, select a unique name, and begin writing content for your audience.', open: false },
@@ -16,17 +16,15 @@ const Home = () => {
 
   return (
     <div>
-      {/* Header */}
       <Header />
 
-      {/* Main Body */}
       <div className="main-content" style={{ backgroundColor: '#f0f0f0', minHeight: '100vh' }}>
-        {/* Blog Captivating Section */}
         <section className="blog-header" style={{ backgroundColor: '#E8EAF6', padding: '50px 20px', textAlign: 'center' }}>
           <h1 style={{ color: '#474BCA', fontWeight: 'bold' }}>Welcome to Our Blog</h1>
           <p style={{ color: '#474BCA', fontSize: '18px' }}>
             Discover the latest trends, insights, and tips to stay ahead in the digital world.
           </p>
+        
         </section>
 
         {/* FAQ Section */}
@@ -57,10 +55,9 @@ const Home = () => {
             </div>
           </div>
         </section>
-       <Footer/>
+        <Footer />
       </div>
 
-      {/* CSS in the same file */}
       <style jsx="true">{`
         .main-content {
           background-color: #f0f0f0;

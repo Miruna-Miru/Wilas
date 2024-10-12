@@ -1,7 +1,16 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from 'react';
+import '../App.css'; // Go up one level to access App.css
+// Make sure this file contains your custom styles
 
 function Header() {
+  // State to manage the visibility of the buttons
+  const [isButtonsVisible, setButtonsVisible] = useState(false);
+
+  // Toggle function for button visibility
+  const toggleButtons = () => {
+    setButtonsVisible(!isButtonsVisible);
+  };
+
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-light w-100" style={{ backgroundColor: '#F9E6E6', padding: '10px', position: 'fixed', top: '0', left: '0', width: '100%', zIndex: '1000' }}>
@@ -27,7 +36,7 @@ function Header() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/profile" style={{ color: '#474BCA' }}>
+                <a className="nav-link" onClick={toggleButtons} style={{ color: '#474BCA', cursor: 'pointer' }}>
                   Profile
                 </a>
               </li>
@@ -40,6 +49,25 @@ function Header() {
           </div>
         </div>
       </nav>
+
+      {isButtonsVisible && (
+        <div className="buttons-section" style={{ backgroundColor: '#fff', padding: '15px', position: 'absolute', top: '60px', right: '20px', border: '1px solid #ccc', borderRadius: '8px', boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.1)', zIndex: '1000', width: '250px' }}>
+          <div className="profile-pic-container" style={{ textAlign: 'center', marginBottom: '10px' }}>
+            <img
+              src="https://via.placeholder.com/100" // Replace with your DP URL
+              alt="Profile"
+              className="profile-pic"
+              style={{ width: '80px', height: '80px', borderRadius: '50%', marginBottom: '5px' }}
+            />
+            <p className="profile-name" style={{ margin: '0', fontWeight: 'bold', color: '#474BCA' }}>Your Name</p> {/* Replace with the actual name */}
+          </div>
+          <button className="custom-button w-100 mb-2">Account Info</button>
+          <button className="custom-button w-100 mb-2">Saved</button>
+          <button className="custom-button w-100 mb-2">Notifications</button>
+          <button className="custom-button w-100 mb-2">Community</button>
+          <button className="custom-button danger w-100">Log Out</button>
+        </div>
+      )}
 
       <style jsx="true">{`
         header {
