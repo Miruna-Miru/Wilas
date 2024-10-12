@@ -53,4 +53,52 @@ header {
       width: 100%;
     }
   }
+
+  .profile-container {
+    text-align: center;
+    padding: 20px; 
+  }
+  
+  .profile-pic-container {
+    margin-bottom: 15px; 
+  }
+  
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover; 
+    border: 2px solid #474BCA; 
+  }
+  
+  .profile-name {
+    margin: 10px 0;
+    font-size: 18px; 
+    color: #474BCA;
+  }
+  
+  .profile-buttons {
+    margin-top: 20px; 
+  }
+  
+  .custom-button {
+    width: 100%; 
+    margin-bottom: 10px; 
+    padding: 10px; 
+    background-color: #F9E6E6; 
+    border: 1px solid #474BCA; 
+    color: #474BCA;
+    border-radius: 5px; 
+    cursor: pointer; 
+  }
+  
+  .custom-button:hover {
+    background-color: #E4B3C7; 
+    color: white; 
+  }
+  
+  .custom-button.active {
+    background-color: #D1A1D6;
+    color: white; 
+  }
   
