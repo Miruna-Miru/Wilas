@@ -1,85 +1,47 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .profile-container {
-  text-align: center; /* Centering the text */
-  padding: 20px; /* Add some padding */
+  text-align: center;
+  padding: 20px; 
 }
 
 .profile-pic-container {
-  margin-bottom: 15px; /* Space between DP and name */
+  margin-bottom: 15px; 
 }
 
 .profile-pic {
-  width: 100px; /* Set width of DP */
-  height: 100px; /* Set height of DP */
-  border-radius: 50%; /* Make the DP rounded */
-  object-fit: cover; /* Ensure the image covers the area */
-  border: 2px solid #474BCA; /* Optional: Add a border */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover; 
+  border: 2px solid #474BCA; 
 }
 
 .profile-name {
-  margin: 10px 0; /* Space above and below the name */
-  font-size: 18px; /* Set font size for name */
-  color: #474BCA; /* Set color for name */
+  margin: 10px 0;
+  font-size: 18px; 
+  color: #474BCA;
 }
 
 .profile-buttons {
-  margin-top: 20px; /* Space above the button section */
+  margin-top: 20px; 
 }
 
 .custom-button {
-  width: 100%; /* Full width buttons */
-  margin-bottom: 10px; /* Space between buttons */
-  padding: 10px; /* Padding inside buttons */
-  background-color: #F9E6E6; /* Background color */
-  border: 1px solid #474BCA; /* Border color */
-  color: #474BCA; /* Text color */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
+  width: 100%; 
+  margin-bottom: 10px; 
+  padding: 10px; 
+  background-color: #F9E6E6; 
+  border: 1px solid #474BCA; 
+  color: #474BCA;
+  border-radius: 5px; 
+  cursor: pointer; 
 }
 
 .custom-button:hover {
-  background-color: #E4B3C7; /* Change background on hover */
-  color: white; /* Change text color on hover */
+  background-color: #E4B3C7; 
+  color: white; 
 }
 
 .custom-button.active {
-  background-color: #D1A1D6; /* Active button color */
-  color: white; /* Active button text color */
+  background-color: #D1A1D6;
+  color: white; 
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../App.css'; // Ensure the correct path to your CSS file
+import '../App.css'; 
 
 const Profile = () => {
   const [activeButton, setActiveButton] = useState('');
@@ -12,17 +12,15 @@ const Profile = () => {
     <div className="profile-container">
       <h2 className="profile-header">Profile</h2>
 
-      {/* Profile Picture and Name */}
       <div className="profile-pic-container">
         <img 
-          src="https://via.placeholder.com/100" // Replace with your DP URL
+          src="https://via.placeholder.com/100" 
           alt="Profile"
           className="profile-pic"
         />
-        <p className="profile-name">Your Name</p> {/* Replace with the actual name */}
+        <p className="profile-name">Your Name</p>
       </div>
 
-      {/* Account Info Button */}
       <div className="profile-buttons">
         <button 
           className={`custom-button ${activeButton === 'account' ? 'active' : ''}`} 
@@ -31,7 +29,7 @@ const Profile = () => {
           Account Info
         </button>
 
-        {/* Additional Buttons */}
+  
         <button 
           className={`custom-button ${activeButton === 'saved' ? 'active' : ''}`} 
           onClick={() => handleButtonClick('saved')}
