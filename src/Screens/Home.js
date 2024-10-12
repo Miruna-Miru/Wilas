@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
-import Header from '../components/Header'; // Import Header component
+import { useNavigate } from 'react-router-dom'; 
+import Header from '../components/Header'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from '../components/Footer';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import AOS styles
-import './Home.css'; // Import your separated CSS
+import 'aos/dist/aos.css';
+import './Home.css'; 
 import Blogimg from '../assets/blog.jpg';
 import CardSlider from '../components/CardSlider';
 
 const Home = () => {
-    const navigate = useNavigate(); // Initialize useNavigate
+    const navigate = useNavigate();
     useEffect(() => {
-        AOS.init({ duration: 1000 }); // Initialize AOS
+        AOS.init({ duration: 1000 }); 
     }, []);
 
     const [faqs, setFaqs] = useState([
@@ -27,29 +27,29 @@ const Home = () => {
 
     return (
         <div>
-            {/* Header */}
+            
             <Header />
 
-            {/* Main Body */}
+            
             <div className="main-content">
-                {/* Blog Section with Image and Overlay */}
+               
                 <section className="blog-header">
                     <img src={Blogimg} alt="Blog Cover" className="blog-image" />
                     <div className="blog-overlay">
-                        {/* Apply AOS to text only */}
+                      
                         <h1 data-aos="fade-up">Welcome to Our Blog</h1>
                         <p data-aos="fade-up" data-aos-delay="200">
                             Discover the latest trends, insights, and tips to stay ahead in the digital world.
                         </p>
                     </div>
                 </section>
-                {/* Create New Blog Section */}
+
                 <section className="create-blog-section" data-aos="fade-up">
                     <h2>Create Your Own Blog</h2>
                     <p>Share your ideas, thoughts, and experiences with the world. Start your blog today!</p>
                     <button
                         className="create-blog-btn"
-                        onClick={() => navigate('/CreateBlog')} // Navigate to CreateBlog page
+                        onClick={() => navigate('/CreateBlog')}
                     >
                         Create Blog
                     </button>
@@ -77,11 +77,15 @@ const Home = () => {
                     </div>
                 </section>
 
-                <h4 className='explore'>
+                {/* Trending Blogs Section */}
+                <h4 className='explore' data-aos="fade-up">
                     Explore Trending <span>BLOGs</span>
                 </h4>
 
-                <CardSlider />
+                {/* Card Slider with AOS */}
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <CardSlider />
+                </div>
 
                 <Footer />
             </div>
