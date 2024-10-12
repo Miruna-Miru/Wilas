@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './Header.css'; // Import the CSS file
+
 
 function Header() {
+  const [isToggled, setIsToggled] = useState(false);
+
+  const handleToggle = () => {
+    setIsToggled(!isToggled);
+  };
+
   return (
     <header>
-      <nav className="navbar navbar-expand-lg navbar-light w-100" style={{ backgroundColor: '#F9E6E6', padding: '10px', position: 'fixed', top: '0', left: '0', width: '100%', zIndex: '1000' }}>
+      <nav className="navbar navbar-expand-lg navbar-light w-100">
         <div className="container-fluid" style={{ paddingLeft: '0', paddingRight: '0' }}>
           <a className="navbar-brand" href="/" style={{ marginLeft: '10px', color: '#474BCA', fontWeight: 'bold' }}>
             WILAS
@@ -15,43 +23,35 @@ function Header() {
           </button>
 
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto" style={{ marginRight: '10px' }}>
+            <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <a className="nav-link" href="/" style={{ color: '#474BCA' }}>
+                <a className="nav-link" href="/">
                   Home
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/settings" style={{ color: '#474BCA' }}>
+                <a className="nav-link" href="/settings">
                   Settings
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/profile" style={{ color: '#474BCA' }}>
+                <a className="nav-link" href="/profile">
                   Profile
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/login" style={{ color: '#474BCA' }}>
-                  Login/Signup
-                </a>
+                <button
+                  className={`nav-link btn ${isToggled ? 'btn-danger' : 'btn-primary'}`} 
+                  onClick={handleToggle}
+                  style={{ color: '#FFF', border: 'none' }}
+                >
+                  {isToggled ? 'Logout' : 'Login/Signup'}
+                </button>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-
-      <style jsx="true">{`
-        header {
-          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .navbar-toggler-icon {
-          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-        }
-        .navbar-nav .nav-link:hover {
-          color: #333;
-        }
-      `}</style>
     </header>
   );
 }
