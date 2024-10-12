@@ -9,7 +9,7 @@ import './Home.css'; // Import your separated CSS
 import Blogimg from '../assets/blog.jpg';
 import CardSlider from '../components/CardSlider';
 
-const Home = () => {
+const Home = ({ toggleProfile }) => {
     const navigate = useNavigate(); // Initialize useNavigate
     useEffect(() => {
         AOS.init({ duration: 1000 }); // Initialize AOS
