@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
-import '../App.css'; // Go up one level to access App.css
-// Make sure this file contains your custom styles
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Header.css'; // Import the CSS file
+
 
 function Header() {
+  const [isToggled, setIsToggled] = useState(false);
+
+  const handleToggle = () => {
+    setIsToggled(!isToggled);
+  };
+
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-light w-100">
@@ -28,7 +35,7 @@ function Header() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" onClick={toggleButtons} style={{ color: '#474BCA', cursor: 'pointer' }}>
+                <a className="nav-link" href="/profile">
                   Profile
                 </a>
               </li>
@@ -45,37 +52,6 @@ function Header() {
           </div>
         </div>
       </nav>
-
-      {isButtonsVisible && (
-        <div className="buttons-section" style={{ backgroundColor: '#fff', padding: '15px', position: 'absolute', top: '60px', right: '20px', border: '1px solid #ccc', borderRadius: '8px', boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.1)', zIndex: '1000', width: '250px' }}>
-          <div className="profile-pic-container" style={{ textAlign: 'center', marginBottom: '10px' }}>
-            <img
-              src="https://via.placeholder.com/100" // Replace with your DP URL
-              alt="Profile"
-              className="profile-pic"
-              style={{ width: '80px', height: '80px', borderRadius: '50%', marginBottom: '5px' }}
-            />
-            <p className="profile-name" style={{ margin: '0', fontWeight: 'bold', color: '#474BCA' }}>Your Name</p> {/* Replace with the actual name */}
-          </div>
-          <button className="custom-button w-100 mb-2">Account Info</button>
-          <button className="custom-button w-100 mb-2">Saved</button>
-          <button className="custom-button w-100 mb-2">Notifications</button>
-          <button className="custom-button w-100 mb-2">Community</button>
-          <button className="custom-button danger w-100">Log Out</button>
-        </div>
-      )}
-
-      <style jsx="true">{`
-        header {
-          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .navbar-toggler-icon {
-          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-        }
-        .navbar-nav .nav-link:hover {
-          color: #333;
-        }
-      `}</style>
     </header>
   );
 }
