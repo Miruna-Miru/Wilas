@@ -1,8 +1,29 @@
-import React from 'react';
+
+import React, { useEffect, useState } from 'react';
+import { Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+  const navigate = useNavigate();
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+
+    useEffect(() => {
+        const username = localStorage.getItem('username');
+        setIsLoggedIn(!!username);
+    }, []);
+
+    const handleLogin = () => {
+        window.location.href = '/Login';
+    };
+
+    const handleSignUp = () => {
+        window.location.href = '/SignUp';
+    };
   return (
+
+    
     <header>
       <nav className="navbar navbar-expand-lg navbar-light w-100" style={{ backgroundColor: '#F9E6E6', padding: '10px', position: 'fixed', top: '0', left: '0', width: '100%', zIndex: '1000' }}>
         <div className="container-fluid" style={{ paddingLeft: '0', paddingRight: '0' }}>
@@ -31,11 +52,39 @@ function Header() {
                   Profile
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/login" style={{ color: '#474BCA' }}>
-                  Login/Signup
-                </a>
-              </li>
+              <>
+                            <Nav.Link
+                                onClick={handleSignUp}
+                                style={{
+                                    color: '#474BCA',
+                                    fontWeight: 'bold',
+                                    textDecoration: 'none',
+                                    padding: '10px 15px',
+                                    margin: '0 10px',
+                                    borderRadius: '20px',
+                                    transition: 'box-shadow 0.3s',
+                                    boxShadow: 'none',
+                                    fontFamily: "'Times New Roman', Times, serif",fontSize: '18px',
+                                }}
+                                onMouseEnter={(e) => e.target.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.6)'}
+                                onMouseLeave={(e) => e.target.style.boxShadow = 'none'}
+                            >
+                                Sign Up
+                            </Nav.Link>
+
+                            <Nav.Link onClick={handleLogin} style={{
+                                color: '#474BCA',
+                                fontWeight: 'bold',
+                                textDecoration: 'none',
+                                padding: '10px 15px',
+                                margin: '0 10px',
+                                borderRadius: '20px',
+                                transition: 'box-shadow 0.3s',
+                                boxShadow: 'none',
+                                fontFamily: "'Times New Roman', Times, serif",fontSize: '18px',
+                            }} onMouseEnter={(e) => e.target.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.6)'}
+                                onMouseLeave={(e) => e.target.style.boxShadow = 'none'}>Login</Nav.Link>
+                        </>
             </ul>
           </div>
         </div>
