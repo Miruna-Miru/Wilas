@@ -1,16 +1,36 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import Home from './Screens/Home';
+
+
+// const App = () => (
+//     <div>
+//        <Home/>
+//     </div>
+// );
+// export default App
+
+
+
+
+import { Routes, Route } from 'react-router-dom';
 import Home from './Screens/Home';
-import CreateBlog from './Screens/CreateBlog'; 
+
+import Login from './Screens/Login';
+import SignUp from './Screens/SignUp';
+import Header from './components/Header';  
 
 const App = () => (
-    <Router>
-        <Routes>
-            <Route exact path="/" element={<Home />} /> 
-            <Route path="/CreateBlog" element={<CreateBlog />} /> 
-        </Routes>
-    </Router>
+    <div>
+       <Header /> {/* Optional, but you can include a header for navigation */}
+       <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+       </Routes>
+    </div>
 );
+
 export default App;
 
