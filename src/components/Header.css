@@ -1,0 +1,104 @@
+/* Header.css */
+header {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    height: 80px;
+  }
+  
+  .navbar {
+    background-color: #F9E6E6;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Adjust the width */
+    z-index: 1000;
+    height:  80px
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  
+  .navbar-brand {
+    margin-left: 10px;
+    color: #474BCA;
+    font-weight: bold;
+  }
+  
+  .navbar-nav {
+    margin-right: 10px;
+  }
+  
+  .nav-link {
+    color: #474BCA;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #333;
+    font-weight: bold; /* Make it bold on hover */
+    text-decoration: underline; /* Add underline on hover */
+  }
+  
+  .nav-item {
+    margin-right: 10px;
+  }
+  
+  .navbar-toggler {
+    margin-right: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      width: 100%;
+    }
+  }
+
+  .profile-container {
+    text-align: center;
+    padding: 20px; 
+  }
+  
+  .profile-pic-container {
+    margin-bottom: 15px; 
+  }
+  
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover; 
+    border: 2px solid #474BCA; 
+  }
+  
+  .profile-name {
+    margin: 10px 0;
+    font-size: 18px; 
+    color: #474BCA;
+  }
+  
+  .profile-buttons {
+    margin-top: 20px; 
+  }
+  
+  .custom-button {
+    width: 100%; 
+    margin-bottom: 10px; 
+    padding: 10px; 
+    background-color: #F9E6E6; 
+    border: 1px solid #474BCA; 
+    color: #474BCA;
+    border-radius: 5px; 
+    cursor: pointer; 
+  }
+  
+  .custom-button:hover {
+    background-color: #E4B3C7; 
+    color: white; 
+  }
+  
+  .custom-button.active {
+    background-color: #D1A1D6;
+    color: white; 
+  }
+  

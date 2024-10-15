@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 function Header() {
   const navigate = useNavigate();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-
 
     useEffect(() => {
         const username = localStorage.getItem('username');

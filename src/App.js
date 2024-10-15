@@ -13,8 +13,7 @@
 
 
 
-/* NEW APP.JS BY EVELYN DAVID */
-import React from 'react';
+
 import { Routes, Route } from 'react-router-dom';
 import Home from './Screens/Home';
 
@@ -34,3 +33,4 @@ const App = () => (
 );
 
 export default App;
+

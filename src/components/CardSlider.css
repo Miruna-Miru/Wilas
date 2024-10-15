@@ -1,0 +1,104 @@
+/* CardSlider.css */
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: auto;
+    background-color: #a39991;
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .slider-box {
+    display: flex;
+    overflow: hidden;
+    width: 90%; /* Reduced the width to give space for buttons */
+    margin: 0 30px; /* Added space around the buttons */
+  }
+  
+  .card-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+  }
+  
+  .card-container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    margin: 0 10px;
+    flex-shrink: 0;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .domain-box {
+    background-color: #a39991;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 10px 0;
+    font-weight: bold;
+  }
+  
+  .likes-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a39991;
+  }
+  
+  .likes-section svg {
+    margin-right: 5px;
+  }
+  
+  .slider-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+  }
+  
+  .slider-btn:hover {
+    color: #333;
+  }
+  
+  .prev-btn {
+    left: 0; /* Adjusted to be outside the card */
+    margin-left: 15px; /* Added margin for spacing */
+  }
+  
+  .next-btn {
+    right: 0; /* Adjusted to be outside the card */
+    margin-right: 15px; /* Added margin for spacing */
+  }
+  
+  @media (max-width: 768px) {
+    .slider-container {
+      width: 100%;
+    }
+  
+    .card-container {
+      width: 200px;
+    }
+  }
+  
