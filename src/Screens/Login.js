@@ -36,7 +36,7 @@ const Login = () => {
   };
 
   return (
-    <Container style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: '100vh', minWidth: '100vw', backgroundColor: "#F9E6E6" }}>
+    <Container style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: '100vh', minWidth: '100vw', backgroundColor: "#e6e6fa" }}>
       <div
         style={{
           
@@ -57,7 +57,7 @@ const Login = () => {
   fontWeight: 'bold',
   textAlign: 'center',
   color: '#000', 
-  //textShadow: '0 2px 4px rgba(40, 240, 206, 0.9), 0 4px 8px rgba(0, 0, 0, 0.3)' 
+  
 }}>
   Login
 </h1>
@@ -126,17 +126,17 @@ const Login = () => {
             ></i>
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", fontSize: "14.5px", margin: "-15px 0 15px" }}>
-            <label style={{ color: "#fff" }}>
+            <label style={{ color: "#000" }}>
               <input type="checkbox" style={{ marginRight: "3px" }} /> Remember Me
             </label>
-            <a href="#" style={{ color: "#fff", textDecoration: "none" }}>Forgot Password</a>
+            <a href="#" style={{ color: "#000", textDecoration: "none" }}>Forgot Password</a>
           </div>
           <button
             type="submit"
             style={{
               width: "100%",
               height: "45px",
-              background: "#F9E6E6",
+              background: "#474BCA",
               border: "none",
               borderRadius: "40px",
               boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
@@ -145,8 +145,8 @@ const Login = () => {
               color: "#333",
               fontWeight: "600",
             }} onMouseEnter={(e) => {
-              e.target.style.boxShadow = '0 4px 8px #474BCA'; 
-              e.target.style.backgroundColor = '#F9E6E6'; 
+              e.target.style.boxShadow = '0 4px 8px #F9E6E6'; 
+              e.target.style.backgroundColor = '#474BCA'; 
             }}
             onMouseLeave={(e) => {
               e.target.style.boxShadow = 'none'; 
@@ -155,10 +155,10 @@ const Login = () => {
           >
             Login
           </button>
-          <div style={{ fontSize: "14.5px", textAlign: "center", margin: "20px 0 15px" }}>
+          <div style={{ fontSize: "14.5px", textAlign: "center", margin: "20px 0 15px",color:"#000" }}>
             <p>
               Don't have an account?{" "}
-              <a href="#" onClick={handleSignUp} style={{ color: "#fff", textDecoration: "none", fontWeight: "600" }}>
+              <a href="#" onClick={handleSignUp} style={{ color: "#000", textDecoration: "none", fontWeight: "600" }}>
                 Register
               </a>
             </p>

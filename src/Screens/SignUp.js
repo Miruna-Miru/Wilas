@@ -67,7 +67,7 @@ const SignUp = ({ setPage, onSignUp }) => {
       alignItems: 'center',
       minHeight: '100vh',  
       minWidth: '100vw',  
-      backgroundColor: '#F9E6E6',
+      backgroundColor: '#e6e6fa',
       margin: 0,
     },
     wrapper: {
@@ -127,9 +127,10 @@ const SignUp = ({ setPage, onSignUp }) => {
       fontSize: '14.5px',
       textAlign: 'center',
       margin: '20px 0 15px',
+      color:'#000'
     },
     link: {
-      color: '#fff',
+      color: '#000',
       textDecoration: 'none',
       fontWeight: '600',
     },
