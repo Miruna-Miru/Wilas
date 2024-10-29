@@ -109,21 +109,24 @@ const blogSchema = new mongoose.Schema({
   category: { type: String, required: true },
   image: { type: String, required: true },
   content: { type: String, required: true },
+  username: { type: String, required: true }, // New field for storing username
   createdAt: { type: Date, default: Date.now }
 });
 
 const Blog = mongoose.model('Blog', blogSchema);
 
+
+// Create Blog Route
 // Create Blog Route
 app.post('/CreateBlog', async (req, res) => {
-  const { title, tagline, category, image, content } = req.body;
+  const { title, tagline, category, image, content, username } = req.body; // Include username
 
   try {
-    const newBlog = new Blog({ title, tagline, category, image, content });
+    const newBlog = new Blog({ title, tagline, category, image, content, username }); // Pass username to the model
     await newBlog.save();
     res.status(201).json({ message: 'Blog created successfully!' });
   } catch (error) {
-    console.error(error);
+    console.error(error); // Log error for debugging
     res.status(400).json({ error: 'Error creating blog.' });
   }
 });
@@ -152,3 +155,19 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+
+
+// Get Published Blogs by Username
+app.get('/getPublishedBlogs', async (req, res) => {
+  const { username } = req.query;
+
+  try {
+    const blogs = await Blog.find({ username }); // Find blogs by username
+    res.json(blogs);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Error fetching blogs.' });
+  }
+});
+

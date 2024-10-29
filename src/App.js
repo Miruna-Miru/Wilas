@@ -4,7 +4,9 @@ import Login from './Screens/Login';
 import SignUp from './Screens/SignUp';
 import Header from './components/Header';
 import CreateBlog from './Screens/CreateBlog';
+import Profile from './components/Profile';
 import About from './Screens/About';
+import PublishedBlogs from './components/PublishedBlogs';
 import BlogList from './components/BlogList';
 import ReadBlog from './Screens/ReadBlog';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -18,7 +20,9 @@ const App = () => (
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          
           <Route path="/createBlog" element={<CreateBlog />} /> 
+          <Route path="/published-blogs" element={<PublishedBlogs />} />
           <Route path="/about" element={<About />} />
           <Route path="/blogs/:category" element={<BlogList />} /> 
           <Route path="/blog/:id" element={<ReadBlog />} /> 

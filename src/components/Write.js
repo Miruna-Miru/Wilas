@@ -7,12 +7,14 @@ export default function Write({ title, tagline, onPublish }) {
   const [showIconNearTextArea, setShowIconNearTextArea] = useState(false);
   const [insertedImages, setInsertedImages] = useState([]);
   const [isPublished, setIsPublished] = useState(false); // Manage published state
+  const username = localStorage.getItem('username');
 
   const handlePublishClick = async (e) => {
     e.preventDefault();
     setIsPublished(true);
   
     const blogData = {
+        username,
       title,
       tagline,
       category,
