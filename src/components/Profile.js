@@ -4,9 +4,13 @@ import '../App.css';
 const Profile = () => {
   const [activeButton, setActiveButton] = useState('');
 
-  const handleButtonClick = (buttonName) => {
-    setActiveButton(buttonName);
-  };
+ 
+  const handleButtonClick = (button) => {
+    setActiveButton(button);
+    if (button === 'account') {
+        navigate('/account-info'); // Navigate to Account Info page
+    }
+};
 
   return (
     <div className="profile-container">

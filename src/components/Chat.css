@@ -1,0 +1,71 @@
+.chat-container {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6A2C91; /* Dark purple color for header */
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.chat-header {
+  margin: 0;
+}
+
+.members-button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.members-list {
+  background-color: #E4B3C7; /* Light purple background for members list */
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.chat-box {
+  height: 400px; /* Set a fixed height for the chat box */
+  overflow-y: auto; /* Enable scrolling */
+  border: 1px solid #474BCA;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #F0F0F0;
+}
+
+.chat-message {
+  margin: 5px 0;
+}
+
+.chat-input-container {
+  display: flex;
+  margin-top: 10px;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #474BCA;
+  border-radius: 5px;
+}
+
+.send-button {
+  padding: 10px;
+  margin-left: 10px;
+  background-color: #474BCA;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: #3a3f9a;
+}

@@ -10,7 +10,14 @@ function Header() {
   const [isToggled, setIsToggled] = useState(false);
 
   const profileRef = useRef(null);
-
+  const handleNavigation = (path) => {
+    setButtonsVisible(false); // Close dropdown after click
+    navigate(path); // Navigate to the chosen path
+  };
+  const handleNavigation1 = (path) => {
+    setButtonsVisible(false); // Close dropdown after click
+    navigate(path); // Navigate to the chosen path
+  };
   useEffect(() => {
     const username = localStorage.getItem('username');
     setIsLoggedIn(!!username);
@@ -175,17 +182,20 @@ function Header() {
               Your Name
             </p>
           </div>
-          <button className="custom-button w-100 mb-2" style={buttonStyle} onMouseEnter={(e) => e.target.style.backgroundColor = '#ffb6c1'} onMouseLeave={(e) => e.target.style.backgroundColor = '#f7f7f7'}>
-            <i className="fas fa-user" style={iconStyle}></i> Account Info
-          </button>
+          <button className="custom-button w-100 mb-2" onClick={() => handleNavigation('/account-info')}>
+      <i className="fas fa-user" style={iconStyle}></i> Account Info
+    </button>
           <button className="custom-button w-100 mb-2" style={buttonStyle} onMouseEnter={(e) => e.target.style.backgroundColor = '#ffb6c1'} onMouseLeave={(e) => e.target.style.backgroundColor = '#f7f7f7'}>
             <i className="fas fa-bookmark" style={iconStyle}></i> Saved
           </button>
           <button className="custom-button w-100 mb-2" style={buttonStyle} onMouseEnter={(e) => e.target.style.backgroundColor = '#ffb6c1'} onMouseLeave={(e) => e.target.style.backgroundColor = '#f7f7f7'}>
             <i className="fas fa-bell" style={iconStyle}></i> Notifications
           </button>
-          <button className="custom-button w-100 mb-2" style={buttonStyle} onMouseEnter={(e) => e.target.style.backgroundColor = '#ffb6c1'} onMouseLeave={(e) => e.target.style.backgroundColor = '#f7f7f7'}>
-            <i className="fas fa-users" style={iconStyle}></i> Community
+          <button 
+            className="custom-button w-100 mb-2"
+            onClick={() => handleNavigation1('/community')} // Navigate to Community page on click
+          >
+            Community
           </button>
           <button className="custom-button danger w-100" style={buttonStyle} onMouseEnter={(e) => e.target.style.backgroundColor = '#ffb6c1'} onMouseLeave={(e) => e.target.style.backgroundColor = '#f7f7f7'}>
             <i className="fas fa-sign-out-alt" style={iconStyle}></i> Log Out

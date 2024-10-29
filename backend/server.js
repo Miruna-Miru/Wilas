@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
+const multer = require('multer');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -11,17 +12,24 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.json({ limit: '5mb' })); // Increase the limit for JSON payload
+app.use(express.urlencoded({ limit: '5mb', extended: true })); // Increase the limit for URL-encoded data
 
 // Connect to MongoDB
 mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error(err));
 
+// Define storage for multer
+const storage = multer.memoryStorage(); // Use memory storage for simplicity
+const upload = multer({ storage: storage });
+
 // User Schema
 const userSchema = new mongoose.Schema({
   name: String,
   email: { type: String, unique: true },
   password: String, // Password stored in plain text (NOT RECOMMENDED)
+  profilePicture: String, // URL or base64-encoded image for profile picture
 });
 
 const User = mongoose.model('User', userSchema);
@@ -63,9 +71,35 @@ app.post('/login', async (req, res) => {
   }
 });
 
-// Serve Frontend File
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, 'src', 'CodeEditor.js'));
+// Profile Picture Upload Route
+app.post('/api/user', upload.single('profilePicture'), async (req, res) => {
+  try {
+    const { username, email, password } = req.body;
+
+    // Convert uploaded image buffer to base64 if present
+    let profilePicture = null;
+    if (req.file) {
+      profilePicture = req.file.buffer.toString('base64');
+    }
+
+    const user = new User({ username, email, password, profilePicture });
+    await user.save();
+    res.status(201).json({ message: 'User information saved successfully!' });
+  } catch (error) {
+    console.error('Error saving user info:', error);
+    res.status(500).json({ error: 'Failed to save user info' });
+  }
+});
+
+// Fetch user info
+app.get('/api/user', async (req, res) => {
+  try {
+    const user = await User.findOne();
+    res.json(user);
+  } catch (error) {
+    console.error('Error fetching user info:', error);
+    res.status(500).json({ error: 'Failed to fetch user info' });
+  }
 });
 
 // Blog Schema
@@ -99,7 +133,6 @@ app.get('/blogs', async (req, res) => {
   const { category } = req.query;
 
   try {
-    // Extract the first word of the category for filtering
     const firstWord = category ? category.split(' ')[0] : null;
     const filter = firstWord ? { category: new RegExp(`^${firstWord}`, 'i') } : {};
 
@@ -108,6 +141,11 @@ app.get('/blogs', async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch blogs' });
   }
+});
+
+// Serve Frontend File
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, 'src', 'CodeEditor.js'));
 });
 
 // Start the server

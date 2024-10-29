@@ -1,0 +1,54 @@
+.community-container {
+    padding: 20px;
+  }
+  
+  .community-box {
+    background-color: #F9E6E6;
+    border: 1px solid #474BCA;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .community-box:hover {
+    background-color: #E4B3C7;
+  }
+  
+  .new-community-form {
+    margin-bottom: 20px;
+  }
+  
+  .new-community-form input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #474BCA;
+    border-radius: 5px;
+  }
+  
+  .new-community-form button {
+    padding: 10px;
+    background-color: #474BCA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .new-community-form button:hover {
+    background-color: #3a3f9a;
+  }
+  
+  .join-button{
+    padding: 10px;
+    background-color: #474BCA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .join-button:hover{
+    background-color: #3a3f9a;
+  }
