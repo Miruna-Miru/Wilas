@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; 
-import Header from '../components/Header'; 
+import { useNavigate } from 'react-router-dom';
+import { FaCode, FaUsers, FaBuilding, FaRegPaperPlane } from 'react-icons/fa'; // Importing necessary icons
+import Header from '../components/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from '../components/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import './Home.css'; 
+import './Home.css';
 import Blogimg from '../assets/blog.jpg';
 import CardSlider from '../components/CardSlider';
+
 
 const Home = () => {
     const navigate = useNavigate();
     useEffect(() => {
-        AOS.init({ duration: 1000 }); 
+        AOS.init({ duration: 1000 });
     }, []);
-
+    const handleCategoryClick = (category) => {
+        navigate(`/blogs/${category}`);
+    };
     const [faqs, setFaqs] = useState([
         { question: 'What is a blog?', answer: 'A blog is a regularly updated website or web page, typically run by an individual or small group, written in an informal or conversational style.', open: false },
         { question: 'How do I start a blog?', answer: 'To start a blog, choose a blogging platform, select a unique name, and begin writing content for your audience.', open: false },
@@ -27,16 +31,11 @@ const Home = () => {
 
     return (
         <div>
-            
             <Header />
-
-            
             <div className="main-content">
-               
                 <section className="blog-header">
                     <img src={Blogimg} alt="Blog Cover" className="blog-image" />
                     <div className="blog-overlay">
-                      
                         <h1 data-aos="fade-up">Welcome to Our Blog</h1>
                         <p data-aos="fade-up" data-aos-delay="200">
                             Discover the latest trends, insights, and tips to stay ahead in the digital world.
@@ -54,7 +53,6 @@ const Home = () => {
                         Create Blog
                     </button>
                 </section>
-
                 {/* FAQ Section */}
                 <section className="faq-section" data-aos="fade-up">
                     <h2>Frequently Asked Questions</h2>
@@ -74,6 +72,28 @@ const Home = () => {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                </section>
+                <section className="features-section" data-aos="fade-up">
+                    <div className="feature" onClick={() => handleCategoryClick('Interview Experiences')}>
+                        <div className="icon-circle"><FaRegPaperPlane /></div>
+                        <h3>Interview Experiences</h3>
+                        <p>Real stories and insights from students who've cracked interviews with top companies.</p>
+                    </div>
+                    <div className="feature" onClick={() => handleCategoryClick('Campus Life')}>
+                        <div className="icon-circle"><FaBuilding /></div>
+                        <h3>Campus Life</h3>
+                        <p>Dive into the vibrant campus culture and events that make college life unforgettable.</p>
+                    </div>
+                    <div className="feature" onClick={() => handleCategoryClick('Technical Blogs')}>
+                        <div className="icon-circle"><FaCode /></div>
+                        <h3>Technical Blogs</h3>
+                        <p>Stay updated with the latest in tech, coding tutorials, and hands-on project guides.</p>
+                    </div>
+                    <div className="feature" onClick={() => handleCategoryClick('Hackathon Experiences')}>
+                        <div className="icon-circle"><FaUsers /></div>
+                        <h3>Hackathon Experiences</h3>
+                        <p>Firsthand experiences from students who have competed and excelled in hackathons.</p>
                     </div>
                 </section>
 

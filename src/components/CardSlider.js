@@ -4,7 +4,7 @@ import './CardSlider.css';
 
 const CardSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const cardsPerSlide = 4; // Number of cards visible at a time
+  const cardsPerSlide = 4;
 
   const cards = [
     {
@@ -65,7 +65,6 @@ const CardSlider = () => {
 
   return (
     <div className="slider-container">
-       
       <button className="slider-btn prev-btn" onClick={handlePrev}>
         &lt;
       </button>
@@ -77,12 +76,14 @@ const CardSlider = () => {
         >
           {cards.map((card, index) => (
             <div className="card-container" key={index}>
-              <img src={card.image} alt={card.title} className="card-image" />
-              <div className="domain-box">{card.domain}</div>
-              <h3>{card.title}</h3>
-              <p>By {card.author}</p>
-              <div className="likes-section">
-                <BiHeart /> {card.likes}
+              <div className="card-image" style={{ backgroundImage: `url(${card.image})` }}>
+                <div className="card-details">
+                  <h3>{card.title}</h3>
+                  <p>By {card.author}</p>
+                  <div className="likes-section">
+                    <BiHeart /> {card.likes}
+                  </div>
+                </div>
               </div>
             </div>
           ))}

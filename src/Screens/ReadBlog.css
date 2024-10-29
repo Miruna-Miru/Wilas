@@ -1,0 +1,65 @@
+.read-blog {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--clr-neutral-100);
+  }
+  
+  .blog-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .blog-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .blog-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #474BCA;
+    margin-top: 20px;
+  }
+  
+  .blog-tagline {
+    font-size: 1.2rem;
+    color: var(--clr-accent-400);
+    margin-bottom: 20px;
+  }
+  
+  .blog-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--clr-neutral-900);
+    text-align: left;
+  }
+  
+  .like-button {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: var(--btn-color);
+    color: #474BCA;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .like-button.liked {
+    color: #e63946; /* Red color for liked state */
+  }
+  
+  .like-button:hover {
+    background-color: var(--clr-neutral-100);
+  }
+  
+  .like-button svg {
+    margin-right: 5px;
+  }
+  

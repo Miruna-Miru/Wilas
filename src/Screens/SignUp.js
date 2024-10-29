@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import axios from "axios";
-import Alert from "./Alert"; // Import the Alert component
+import Alert from "./Alert"; 
 
 const SignUp = ({ setPage, onSignUp }) => {
   const [name, setName] = useState("");

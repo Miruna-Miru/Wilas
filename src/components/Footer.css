@@ -1,0 +1,28 @@
+footer {
+    background-color: #F9E6E6;
+    color: #474BCA;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer h1,
+footer p {
+    color: #474BCA; /* Set the color for the app name and tagline */
+}
+
+footer a {
+    color: #474BCA; /* Set the color for links */
+    text-decoration: none; /* Remove underline from links */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Optional: underline on hover */
+}
+
+footer .social-icons {
+    margin-top: 15px;
+}
+
+footer .social-icons a {
+    margin-right: 15px; /* Space between social icons */
+}

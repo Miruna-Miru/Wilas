@@ -143,7 +143,7 @@
     transform: scale(1.05);
   }
   
-  /* Responsive Design for Create Blog Section */
+
   @media (max-width: 768px) {
     .create-blog-section h2 {
       font-size: 28px;
@@ -158,7 +158,47 @@
       padding: 12px 25px;
     }
   }
-  
+  .features-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    background-color: #f9f9f9;
+}
+
+.feature {
+    text-align: center;
+    width: 200px;
+    transition: transform 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.icon-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    background-color: #474BCA;
+    border-radius: 50%;
+    color: white;
+    font-size: 36px;
+}
+
+.feature h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+.feature p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
 
   .explore {
     color: black;

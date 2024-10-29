@@ -1,38 +1,27 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import Home from './Screens/Home';
-
-
-// const App = () => (
-//     <div>
-//        <Home/>
-//     </div>
-// );
-// export default App
-
-
-
-
 import { Routes, Route } from 'react-router-dom';
 import Home from './Screens/Home';
-
 import Login from './Screens/Login';
 import SignUp from './Screens/SignUp';
-import Header from './components/Header';  
+import Header from './components/Header';
 import CreateBlog from './Screens/CreateBlog';
+import About from './Screens/About';
+import BlogList from './components/BlogList';
+import ReadBlog from './Screens/ReadBlog';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const App = () => (
     <div>
-       <Header /> {/* Optional, but you can include a header for navigation */}
+       <Header /> 
        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path='/CreateBlog' element={<CreateBlog/>}/> 
+          <Route path="/createBlog" element={<CreateBlog />} /> 
+          <Route path="/about" element={<About />} />
+          <Route path="/blogs/:category" element={<BlogList />} /> 
+          <Route path="/blog/:id" element={<ReadBlog />} /> 
        </Routes>
     </div>
 );
 
 export default App;
-
